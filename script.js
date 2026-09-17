@@ -1,0 +1,12 @@
+const pages=document.querySelectorAll('.page');const nav=document.querySelectorAll('.nav-item[data-page]');
+function showPage(id){pages.forEach(p=>p.classList.toggle('active',p.id===id));nav.forEach(n=>n.classList.toggle('active',n.dataset.page===id));window.scrollTo({top:0,behavior:'smooth'})}
+nav.forEach(n=>n.addEventListener('click',()=>showPage(n.dataset.page)));
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(window.tt);window.tt=setTimeout(()=>t.classList.remove('show'),2600)}
+function runAssessment(){toast('AI assessment completed — skill gaps updated');}
+function enroll(btn){btn.textContent='✓ Enrolled';btn.disabled=true;toast('Course added to your learning plan');}
+document.getElementById('fileInput').addEventListener('change',e=>{const f=e.target.files[0];if(f){document.getElementById('fileName').textContent='Selected: '+f.name;toast('Learning material uploaded')}})
+function generateQuiz(){document.getElementById('quizResult').classList.remove('hidden');toast('AI generated a quiz from the selected material')}
+function addMessage(text,user=false){const m=document.getElementById('messages');const d=document.createElement('div');d.className='msg '+(user?'user':'ai');d.innerHTML=`<span>${user?'GO':'✦'}</span><div><b>${user?'You':'SkillGov AI'}</b><p>${text}</p></div>`;m.appendChild(d);m.scrollTop=m.scrollHeight}
+function answerFor(q){q=q.toLowerCase();if(q.includes('first'))return 'Start with <b>Data Analysis for Governance</b>. It addresses one of your highest gaps and creates a foundation for the next modules.';if(q.includes('gap'))return 'Your largest gaps are <b>Digital Governance</b>, <b>Statistical Methods</b> and <b>Data Analysis</b>. I recommend focusing on these in that order.';if(q.includes('4-week'))return 'Week 1: Data basics. Week 2: Data analysis. Week 3: governance applications. Week 4: practice assessment and AI-generated quizzes.';return 'Based on your competency profile, I recommend role-based learning through iGOT and NSSTA, followed by a short AI assessment.'}
+function ask(q){document.getElementById('chatInput').value=q;sendMessage()}
+function sendMessage(){const i=document.getElementById('chatInput');const q=i.value.trim();if(!q)return;addMessage(q,true);i.value='';setTimeout(()=>addMessage(answerFor(q)),450)}

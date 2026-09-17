@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkillGov AI — Intelligent Learning Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">✦</div>
+        <div><b>SkillGov</b><span>AI Learning Platform</span></div>
+      </div>
+      <nav>
+        <button class="nav-item active" data-page="dashboard">⌂ <span>Dashboard</span></button>
+        <button class="nav-item" data-page="profile">◉ <span>My Profile</span></button>
+        <button class="nav-item" data-page="skills">◈ <span>Skill Assessment</span></button>
+        <button class="nav-item" data-page="courses">▣ <span>Recommended Courses</span></button>
+        <button class="nav-item" data-page="quiz">✎ <span>AI Quiz Generator</span></button>
+        <button class="nav-item" data-page="assistant">✦ <span>AI Learning Assistant</span></button>
+        <button class="nav-item" data-page="progress">◒ <span>Progress</span></button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="secure">🔒 Secure Government Learning</div>
+        <button class="nav-item" data-page="settings">⚙ <span>Settings</span></button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="mobile-brand"><b>SkillGov AI</b></div>
+        <div class="top-actions">
+          <span class="status-dot"></span><span class="status-text">AI Engine Online</span>
+          <button class="icon-btn">⌕</button>
+          <button class="icon-btn">🔔</button>
+          <div class="avatar">GO</div>
+        </div>
+      </header>
+
+      <section id="dashboard" class="page active">
+        <div class="hero">
+          <div>
+            <p class="eyebrow">PERSONALIZED CAPACITY BUILDING</p>
+            <h1>Welcome, <span>Government Official</span></h1>
+            <p>Build the competencies needed for your role with AI-powered skill intelligence and personalized learning.</p>
+          </div>
+          <button class="primary" onclick="showPage('skills')">Assess My Skills →</button>
+        </div>
+
+        <div class="stat-grid">
+          <div class="stat-card"><div class="stat-icon blue">▣</div><div><small>Learning Plan</small><strong>4 Courses</strong><em>2 in progress</em></div></div>
+          <div class="stat-card"><div class="stat-icon green">✓</div><div><small>Competency Match</small><strong>72%</strong><em>+8% this month</em></div></div>
+          <div class="stat-card"><div class="stat-icon amber">◆</div><div><small>Assessments</small><strong>8 / 10</strong><em>Completed</em></div></div>
+          <div class="stat-card"><div class="stat-icon purple">◒</div><div><small>Learning Progress</small><strong>64%</strong><em>On track</em></div></div>
+        </div>
+
+        <div class="section-head"><div><h2>Your Skill Intelligence</h2><p>AI analysis of current and required competencies.</p></div><button class="ghost" onclick="showPage('skills')">View full analysis</button></div>
+        <div class="content-grid">
+          <div class="panel">
+            <div class="panel-head"><h3>Current vs Required Skills</h3><span class="pill">AI analyzed</span></div>
+            <div class="skill-bars">
+              <div><label>Data Analysis <span>62 / 85</span></label><div class="bar"><i style="width:73%"></i></div></div>
+              <div><label>Statistical Methods <span>55 / 80</span></label><div class="bar"><i style="width:69%"></i></div></div>
+              <div><label>Digital Governance <span>48 / 75</span></label><div class="bar"><i style="width:64%"></i></div></div>
+              <div><label>Python / R <span>38 / 70</span></label><div class="bar"><i style="width:54%"></i></div></div>
+              <div><label>Communication <span>72 / 80</span></label><div class="bar"><i style="width:90%"></i></div></div>
+            </div>
+          </div>
+          <div class="panel recommendation">
+            <div class="panel-head"><h3>AI Recommendation</h3><span class="ai-badge">✦ AI</span></div>
+            <div class="recommend-box">
+              <div class="rec-icon">◈</div>
+              <div><b>Focus on Data Analysis</b><p>Your largest competency gap is in data analysis and programming. Start with these modules.</p></div>
+            </div>
+            <button class="course-row" onclick="showPage('courses')"><span>▣</span><div><b>Data Analysis for Governance</b><small>iGOT • Beginner</small></div><strong>→</strong></button>
+            <button class="course-row" onclick="showPage('courses')"><span>▣</span><div><b>Python for Official Statistics</b><small>NSSTA • Intermediate</small></div><strong>→</strong></button>
+          </div>
+        </div>
+      </section>
+
+      <section id="profile" class="page">
+        <div class="page-title"><p class="eyebrow">MY PROFILE</p><h1>Official Profile</h1><p>Manage your role and competency information used by the AI engine.</p></div>
+        <div class="profile-layout">
+          <div class="panel profile-card">
+            <div class="big-avatar">GO</div><h2>Government Official</h2><p class="muted">Assistant Section Officer</p>
+            <div class="profile-tags"><span>Administration</span><span>5 Years Experience</span><span>Continuous Learner</span></div>
+            <button class="primary full" onclick="toast('Profile saved successfully')">Save Profile</button>
+          </div>
+          <div class="panel form-panel">
+            <h3>Professional Information</h3>
+            <label>Designation<input value="Assistant Section Officer"></label>
+            <label>Department<input value="Administration Department"></label>
+            <label>Experience<input value="5 Years"></label>
+            <label>Learning Goal<select><option>Improve data-driven decision making</option><option>Develop statistical skills</option><option>Improve digital governance skills</option></select></label>
+            <h3 class="mt">Competencies</h3>
+            <div class="chips"><span>Data Management</span><span>Communication</span><span>Policy Analysis</span><span>Project Management</span><span>Digital Tools</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="page">
+        <div class="page-title"><p class="eyebrow">AI COMPETENCY ASSESSMENT</p><h1>Skill Gap Analysis</h1><p>Compare your current competencies with the requirements identified for your role.</p></div>
+        <div class="panel">
+          <div class="panel-head"><div><h3>Competency Matrix</h3><p class="muted">Gap = required level − current level</p></div><button class="primary" onclick="runAssessment()">Run AI Assessment</button></div>
+          <div class="matrix">
+            <div class="matrix-row header"><b>Competency</b><b>Current</b><b>Required</b><b>Gap</b><b>Status</b></div>
+            <div class="matrix-row"><span>Data Analysis</span><b>62</b><b>85</b><strong class="gap">23</strong><span class="badge warning">Priority</span></div>
+            <div class="matrix-row"><span>Statistical Methods</span><b>55</b><b>80</b><strong class="gap">25</strong><span class="badge warning">Priority</span></div>
+            <div class="matrix-row"><span>Digital Governance</span><b>48</b><b>75</b><strong class="gap">27</strong><span class="badge warning">Priority</span></div>
+            <div class="matrix-row"><span>Communication</span><b>72</b><b>80</b><strong class="gap low">8</strong><span class="badge good">Strong</span></div>
+            <div class="matrix-row"><span>Project Management</span><b>68</b><b>78</b><strong class="gap low">10</strong><span class="badge good">Strong</span></div>
+          </div>
+        </div>
+        <div class="section-head"><div><h2>AI-Generated Learning Path</h2><p>Recommended from your role, competency gaps and learning goals.</p></div></div>
+        <div class="learning-path">
+          <div class="step done"><span>1</span><div><b>Data Analysis for Governance</b><small>iGOT • 4 weeks</small></div><em>Recommended</em></div>
+          <div class="connector"></div>
+          <div class="step"><span>2</span><div><b>Official Statistical Methods</b><small>NSSTA • 6 weeks</small></div><em>Recommended</em></div>
+          <div class="connector"></div>
+          <div class="step"><span>3</span><div><b>Digital Governance Essentials</b><small>iGOT • 3 weeks</small></div><em>Recommended</em></div>
+        </div>
+      </section>
+
+      <section id="courses" class="page">
+        <div class="page-title"><p class="eyebrow">PERSONALIZED LEARNING</p><h1>Recommended Courses</h1><p>AI-ranked learning resources based on your competency gaps.</p></div>
+        <div class="course-grid">
+          <div class="course-card"><div class="course-top blue-bg">DATA</div><span class="source">iGOT Karmayogi</span><h3>Data Analysis for Governance</h3><p>Build practical skills for interpreting and using data in government decision-making.</p><div class="course-meta"><span>Beginner</span><span>4 weeks</span></div><button class="primary full" onclick="enroll(this)">Enroll & Start</button></div>
+          <div class="course-card"><div class="course-top purple-bg">STAT</div><span class="source">NSSTA</span><h3>Official Statistical Methods</h3><p>Strengthen foundations in statistical concepts and official statistics workflows.</p><div class="course-meta"><span>Intermediate</span><span>6 weeks</span></div><button class="primary full" onclick="enroll(this)">Enroll & Start</button></div>
+          <div class="course-card"><div class="course-top green-bg">DIGITAL</div><span class="source">iGOT Karmayogi</span><h3>Digital Governance Essentials</h3><p>Learn cybersecurity, data privacy and digital governance practices.</p><div class="course-meta"><span>Beginner</span><span>3 weeks</span></div><button class="primary full" onclick="enroll(this)">Enroll & Start</button></div>
+          <div class="course-card"><div class="course-top amber-bg">PYTHON</div><span class="source">NSSTA</span><h3>Python for Official Statistics</h3><p>Apply Python to data cleaning, analysis and visualization workflows.</p><div class="course-meta"><span>Intermediate</span><span>5 weeks</span></div><button class="primary full" onclick="enroll(this)">Enroll & Start</button></div>
+        </div>
+      </section>
+
+      <section id="quiz" class="page">
+        <div class="page-title"><p class="eyebrow">GENERATIVE AI ASSESSMENT</p><h1>AI Quiz Generator</h1><p>Upload learning material and generate practice MCQs automatically.</p></div>
+        <div class="quiz-layout">
+          <div class="panel upload-panel">
+            <div class="upload-icon">↑</div><h2>Upload Learning Material</h2><p>PDF, PPTX, DOCX or TXT files</p>
+            <input type="file" id="fileInput" accept=".pdf,.ppt,.pptx,.doc,.docx,.txt" hidden>
+            <button class="primary" onclick="document.getElementById('fileInput').click()">Choose File</button>
+            <div id="fileName" class="file-name">No file selected</div>
+          </div>
+          <div class="panel settings-panel">
+            <h3>Quiz Settings</h3>
+            <label>Number of Questions<select id="qCount"><option>5</option><option selected>10</option><option>15</option><option>20</option></select></label>
+            <label>Difficulty<select id="difficulty"><option>Easy</option><option selected>Mixed</option><option>Hard</option></select></label>
+            <label>Focus Area<select><option>All topics</option><option>Statistics</option><option>Data Analysis</option><option>Digital Governance</option></select></label>
+            <button class="primary full" onclick="generateQuiz()">✦ Generate AI Quiz</button>
+          </div>
+        </div>
+        <div id="quizResult" class="panel quiz-result hidden">
+          <div class="panel-head"><h3>Generated MCQ Preview</h3><span class="pill">AI Generated</span></div>
+          <h4>Q1. Which approach best supports competency-based capacity building?</h4>
+          <div class="options"><button>A. Same course for every official</button><button>B. Role-based learning recommendations</button><button>C. Avoiding assessments</button><button>D. Removing competency profiles</button></div>
+          <button class="primary" onclick="toast('Answer submitted — Correct!')">Submit Answer</button>
+        </div>
+      </section>
+
+      <section id="assistant" class="page">
+        <div class="page-title"><p class="eyebrow">AI VIRTUAL ASSISTANT</p><h1>Learning Assistant</h1><p>Ask questions about your learning plan, competencies and recommended courses.</p></div>
+        <div class="panel chat">
+          <div id="messages" class="messages">
+            <div class="msg ai"><span>✦</span><div><b>SkillGov AI</b><p>Hello! I can help you understand your skill gaps, explain courses, or plan your learning path.</p></div></div>
+          </div>
+          <div class="suggestions"><button onclick="ask('What should I learn first?')">What should I learn first?</button><button onclick="ask('Explain my biggest skill gap')">Explain my biggest skill gap</button><button onclick="ask('Suggest a 4-week plan')">Suggest a 4-week plan</button></div>
+          <div class="chat-input"><input id="chatInput" placeholder="Ask anything about your learning path..." onkeydown="if(event.key==='Enter') sendMessage()"><button onclick="sendMessage()">➤</button></div>
+        </div>
+      </section>
+
+      <section id="progress" class="page">
+        <div class="page-title"><p class="eyebrow">LEARNING ANALYTICS</p><h1>Your Progress</h1><p>Track competency growth and learning activity.</p></div>
+        <div class="stat-grid"><div class="stat-card"><div class="stat-icon blue">◒</div><div><small>Overall Progress</small><strong>64%</strong><em>+12% this month</em></div></div><div class="stat-card"><div class="stat-icon green">✓</div><div><small>Courses Completed</small><strong>8</strong><em>2 this month</em></div></div><div class="stat-card"><div class="stat-icon purple">★</div><div><small>Certificates</small><strong>3</strong><em>Earned</em></div></div></div>
+        <div class="panel progress-panel"><div class="panel-head"><h3>Competency Growth</h3><span class="pill">Last 6 months</span></div><div class="growth"><div style="height:42%"><span>42</span></div><div style="height:50%"><span>50</span></div><div style="height:58%"><span>58</span></div><div style="height:61%"><span>61</span></div><div style="height:68%"><span>68</span></div><div style="height:72%"><span>72</span></div></div><div class="months"><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span></div></div>
+      </section>
+
+      <section id="settings" class="page">
+        <div class="page-title"><p class="eyebrow">SETTINGS</p><h1>Platform Settings</h1><p>Demo controls for the hackathon prototype.</p></div>
+        <div class="panel settings-list"><div><div><b>AI Recommendations</b><p>Use competency gaps to personalize learning.</p></div><input type="checkbox" checked></div><div><div><b>Assessment Notifications</b><p>Receive reminders for pending assessments.</p></div><input type="checkbox" checked></div><div><div><b>iGOT Integration</b><p>Sync recommended government learning resources.</p></div><input type="checkbox" checked></div></div>
+      </section>
+    </main>
+  </div>
+  <div id="toast" class="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
